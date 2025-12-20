@@ -1,5 +1,5 @@
-from src import process_receipt_image
+from src import create_app
 
-result = process_receipt_image(
-    "downloads/AgACAgUAAxkBAAIBa2k40JI_ZcLThtQdpt4AAVdqGeu_WwACsAtrG9wCyVW97Uzkt3hGsQEAAwIAA3kAAzYE.jpg")
-print(result)
+if __name__ == "__main__":
+    app = create_app()
+    app.run(debug=app.config["ENV"] == "development", port=app.config["PORT"])
