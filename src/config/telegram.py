@@ -7,7 +7,7 @@ def on_telegram_init():
     try:
         telegram_url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/setWebHook"
 
-        if ENV:
+        if ENV == "development":
             ngrok_url = get_ngrok_url()
             print("URL:", ngrok_url)
             if ngrok_url:
